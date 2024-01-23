@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptar/Desencriptar Mensaje</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b909ed3b9a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <main class="container">
+        <section class="contenido-inicial">
+            <div class="header">
+                <span class="titulo">aplicacion para encriptar / desencriptar Texto</span>
+            </div>
+            <div class="full-contenido">
+                <div class="contenido-encriptar">
+                    <textarea id="mensaje" placeholder="Ingrese el texto aquí!"></textarea>
+                </div>
+                <div class="info">
+                    <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Solo letras minúsculas y
+                        sin acentos</span>
+                </div>
+                <div class="contenedor-botones">
+                    <div class="btn-encrypt">
+                        <button id="encrypt" onclick="encriptar()">Encriptar</button>
+                    </div>
+                    <div class="btn-decrypt">
+                        <button id="decrypt" onclick="desencriptar()">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenido-final">
+            <div id="cardRespuesta" class="card-respuesta">
+                <div id="result">
+                    <div id="respuesta-text"></div>
+                    <div class="btn-copiar">
+                        <button id="copiar" onclick="copiar()">Copiar</button>
+                    </div>
+                </div>
+                <div id="noresult">
+                    <img src="./assest/images/Muneco.png" alt="muñeco" style="width: 100%;">
+                    <div class="mensaje-no-encontrado">
+                        <span class="text-sin-mensaje-titulo">Ningún mensaje fue encontrado</span>
+                        <span class="text-sin-mensaje-subtitulo">Ingresa el texto que desees encriptar o
+                            desencriptar.</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

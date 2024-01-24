@@ -3,7 +3,7 @@ function encriptar() {
     let respuesta = document.getElementById('respuesta-text');
 
     if (mensaje == null || mensaje.trim() == '') {
-        alert("El mensaje no puede estar vacio.");
+        toggleResultVisibility(false);
     } else {
         if (validarTexto(mensaje)) {
             mensaje = mensaje.replace(/e/g, "enter")
@@ -12,7 +12,8 @@ function encriptar() {
                 .replace(/o/g, "ober")
                 .replace(/u/g, "ufat");
             respuesta.textContent = mensaje;
-            toggleResultVisibility();
+            toggleResultVisibility(true);
+            aplicarEfecto(respuesta);
         } else {
             alert("El mensaje contiene caracteres no permitidos.");
         }
@@ -24,16 +25,21 @@ function desencriptar() {
     let mensaje = document.getElementById('mensaje').value;
     let respuesta = document.getElementById('respuesta-text');
 
-    if (validarTexto(mensaje)) {
-        mensaje = mensaje.replace(/enter/g, "e")
-            .replace(/imes/g, "i")
-            .replace(/ai/g, "a")
-            .replace(/ober/g, "o")
-            .replace(/ufat/g, "u");
-        respuesta.textContent = mensaje;
-        toggleResultVisibility();
+    if (mensaje == null || mensaje.trim() == '') {
+        toggleResultVisibility(false);
     } else {
-        alert("El mensaje contiene caracteres no permitidos.");
+        if (validarTexto(mensaje)) {
+            mensaje = mensaje.replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+            respuesta.textContent = mensaje;
+            toggleResultVisibility(true);
+            aplicarEfecto(respuesta);
+        } else {
+            alert("El mensaje contiene caracteres no permitidos.");
+        }
     }
 }
 
@@ -49,18 +55,32 @@ function copiar() {
 
 
 function validarTexto(message) {
-    return /^[a-z\s]*$/.test(message);
+    return /^[a-z\s.,;:?!-]*$/.test(message);
 }
 
-function toggleResultVisibility() {
+function toggleResultVisibility(texto) {
 
     let resultDiv = document.getElementById('result');
     let noResultDiv = document.getElementById('noresult');
     let noCardRespuesta = document.getElementById('cardRespuesta');
 
-    resultDiv.classList.add("show-result");
-    noResultDiv.style.display = 'none';
-    noCardRespuesta.classList.add("card-respuesta-after-send");
+    if (texto) {
+        resultDiv.classList.add("show-result");
+        noResultDiv.style.display = 'none';
+        noCardRespuesta.classList.add("card-respuesta-after-send");
+    } else {
+        noCardRespuesta.classList.remove("card-respuesta-after-send");
+        resultDiv.classList.remove("show-result");
+        noResultDiv.style.display = 'block';
+    }
+
 }
+
+function aplicarEfecto(elemento) {
+    elemento.classList.remove('fade-in');
+    setTimeout(() => elemento.classList.add('fade-in'), 10);
+}
+
+
 
 

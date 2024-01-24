@@ -14,11 +14,29 @@
     <main class="container">
         <section class="contenido-inicial">
             <div class="header">
-                <span class="titulo">aplicacion para encriptar / desencriptar Texto</span>
+                <span class="titulo">
+                    <span style="--i: 1;">A</span><span style="--i: 2;">P</span><span style="--i: 3;">L</span><span
+                        style="--i: 4;">I</span><span style="--i: 5;">C</span><span style="--i: 6;">A</span><span
+                        style="--i: 7;">C</span><span style="--i: 8;">I</span><span style="--i: 9;">O</span><span
+                        style="--i: 10;">N</span>
+                    <span style="--i: 11;">P</span><span style="--i: 12;">A</span><span style="--i: 13;">R</span><span
+                        style="--i: 14;">A</span>
+                    <span style="--i: 15;">E</span><span style="--i: 16;">N</span><span style="--i: 17;">C</span><span
+                        style="--i: 18;">R</span><span style="--i: 19;">I</span><span style="--i: 20;">P</span><span
+                        style="--i: 21;">T</span><span style="--i: 22;">A</span><span style="--i: 23;">R</span>
+                    <span style="--i: 24;">/</span>
+                    <span style="--i: 25;">D</span><span style="--i: 26;">E</span><span style="--i: 27;">S</span><span
+                        style="--i: 28;">E</span><span style="--i: 29;">N</span><span style="--i: 30;">C</span><span
+                        style="--i: 31;">R</span><span style="--i: 32;">I</span><span style="--i: 33;">P</span><span
+                        style="--i: 34;">T</span><span style="--i: 35;">A</span><span style="--i: 36;">R</span>
+                    <span style="--i: 37;">T</span><span style="--i: 38;">E</span><span style="--i: 39;">X</span><span
+                        style="--i: 40;">T</span><span style="--i: 41;">O</span>
+
+                </span>
             </div>
             <div class="full-contenido">
                 <div class="contenido-encriptar">
-                    <textarea id="mensaje" placeholder="Ingrese el texto aquí!"></textarea>
+                    <textarea id="mensaje" placeholder="Ingrese el texto aquí!" oninput="encriptar()"></textarea>
                 </div>
                 <div class="info">
                     <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Solo letras minúsculas y
@@ -43,7 +61,7 @@
                     </div>
                 </div>
                 <div id="noresult">
-                    <img src="./assest/images/Muneco.png" alt="muñeco" style="width: 100%;">
+                    <img id="muneco" src="./assest/images/Muneco.png" alt="muñeco" style="width: 100%;">
                     <div class="mensaje-no-encontrado">
                         <span class="text-sin-mensaje-titulo">Ningún mensaje fue encontrado</span>
                         <span class="text-sin-mensaje-subtitulo">Ingresa el texto que desees encriptar o
@@ -55,6 +73,12 @@
         </section>
 
     </main>
+    <footer>
+        <p>&copy; 2024 Erick Martínez Gómez. Todos los derechos reservados, Contáctame en: <a
+                href="mailto:erickm124@gmail.com">erickm124@gmail.com</a></p>
+
+    </footer>
+
     <script src="script.js" defer></script>
 </body>
 
